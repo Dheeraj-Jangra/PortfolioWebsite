@@ -1,0 +1,19 @@
+---
+const technologies = [
+  "Python", "SQL", "Pandas", "NumPy", "Tableau", "Power BI",
+  "Excel", "R", "Jupyter", "Looker", "Snowflake", "dbt",
+  "Python", "SQL", "Pandas", "NumPy", "Tableau", "Power BI",
+  "Excel", "R", "Jupyter", "Looker", "Snowflake", "dbt",
+];
+---
+
+<div class="bg-inverse-canvas dark:bg-dark-surface overflow-hidden transition-colors">
+  <div class="flex marquee-track py-3">
+    {technologies.map((tech) => (
+      <span class="flex items-center gap-3 px-6 whitespace-nowrap text-inverse-ink/70 dark:text-dark-ink/70 text-sm font-mono tracking-wide uppercase">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent-magenta"></span>
+        {tech}
+      </span>
+    ))}
+  </div>
+</div>

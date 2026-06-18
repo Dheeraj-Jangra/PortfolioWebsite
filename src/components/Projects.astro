@@ -1,0 +1,104 @@
+---
+const projects = [
+  {
+    title: "Customer Churn Dashboard",
+    category: "Product Analytics",
+    description: "Built an interactive Tableau dashboard tracking churn risk across 500K users. Identified 3 key behavioral signals that predicted 78% of cancellations.",
+    tags: ["Tableau", "SQL", "Python", "Cohort Analysis"],
+    color: "bg-block-lime",
+    year: "2024",
+  },
+  {
+    title: "Revenue Attribution Model",
+    category: "Marketing Analytics",
+    description: "Multi-touch attribution model processing 2M+ touchpoints monthly. Replaced last-click model, revealing 35% more value from top-of-funnel channels.",
+    tags: ["Python", "SQL", "Markov Chains", "Plotly"],
+    color: "bg-block-lilac",
+    year: "2024",
+  },
+  {
+    title: "Supply Chain Optimizer",
+    category: "Operations Analytics",
+    description: "Forecasting pipeline reducing stockouts by 42%. Time-series analysis on 3 years of inventory data with automated reorder triggers.",
+    tags: ["R", "Prophet", "Power BI", "ETL"],
+    color: "bg-block-mint",
+    year: "2023",
+  },
+  {
+    title: "A/B Test Framework",
+    category: "Experimentation",
+    description: "Internal tool for designing and evaluating A/B tests. Bayesian engine with automatic sample sizing and false discovery rate control.",
+    tags: ["Python", "Streamlit", "SciPy", "Bayesian"],
+    color: "bg-block-cream",
+    year: "2023",
+  },
+  {
+    title: "DSA Visualizer",
+    category: "Vibe Coding",
+    description: "Interactive web app that visualizes sorting, graph traversal, and DP algorithms step-by-step. Built for learning, designed for joy.",
+    tags: ["React", "TypeScript", "D3.js", "Canvas API"],
+    color: "bg-block-pink",
+    year: "2023",
+  },
+  {
+    title: "Executive KPI Suite",
+    category: "Business Intelligence",
+    description: "Automated reporting suite replacing 12 hours of weekly manual work. Daily KPI snapshots with anomaly detection and Slack alerts.",
+    tags: ["Looker", "dbt", "Snowflake", "Python"],
+    color: "bg-block-coral",
+    year: "2022",
+  },
+];
+---
+
+<section id="work" class="py-24 md:py-32">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
+      <div>
+        <span class="eyebrow text-ink/40 dark:text-dark-ink/40 mb-4 block reveal">Selected Work</span>
+        <h2 class="display-lg max-w-[500px] text-ink dark:text-dark-ink reveal" style="transition-delay: 100ms">
+          Featured
+          <span class="relative inline-block">
+            <span class="relative z-10">projects</span>
+            <span class="absolute bottom-1 left-0 w-full h-3 bg-block-pink -z-0 rounded-sm"></span>
+          </span>
+        </h2>
+      </div>
+      <p class="text-ink/50 dark:text-dark-ink/50 max-w-[360px] mt-4 md:mt-0 body-sm reveal" style="transition-delay: 200ms">
+        Dashboards, models, and tools — each built to answer a specific business question.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 stagger-children">
+      {projects.map((project, i) => (
+        <div
+          class="reveal project-card group bg-surface-soft dark:bg-dark-surface rounded-lg overflow-hidden border border-hairline dark:border-dark-hairline"
+          style={`transition-delay: ${i * 80}ms`}
+        >
+          <div class={`${project.color} grain relative h-48 md:h-56 flex items-center justify-center`}>
+            <div class="absolute top-4 right-4">
+              <span class="caption text-ink/30 dark:text-dark-ink/30">{project.year}</span>
+            </div>
+            <div class="relative z-10 text-center px-6">
+              <span class="eyebrow text-ink/40 dark:text-dark-ink/40 mb-2 block">{project.category}</span>
+              <h3 class="display-lg text-ink dark:text-dark-ink">{project.title}</h3>
+            </div>
+          </div>
+
+          <div class="p-6">
+            <p class="text-ink/60 dark:text-dark-ink/60 text-sm leading-relaxed mb-4">{project.description}</p>
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span class="px-2 py-0.5 bg-canvas dark:bg-dark-surface-elevated border border-hairline dark:border-dark-hairline rounded-sm text-xs font-mono text-ink/40 dark:text-dark-ink/40 tracking-wider uppercase">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div class="overlay bg-ink/0 group-hover:bg-ink/5 dark:group-hover:bg-dark-ink/5 transition-colors duration-500"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

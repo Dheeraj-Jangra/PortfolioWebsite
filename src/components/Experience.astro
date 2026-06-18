@@ -1,0 +1,88 @@
+---
+const experiences = [
+  {
+    period: "2023 — Present",
+    role: "Senior Data Analyst",
+    company: "DataFlow Inc.",
+    description: "Leading analytics for the growth team. Built the churn prediction model and attribution framework that shaped $4M in marketing spend reallocation.",
+    highlights: ["Churn Modeling", "Attribution", "Stakeholder Comms"],
+    side: "right",
+  },
+  {
+    period: "2021 — 2023",
+    role: "Data Analyst",
+    company: "InsightCo",
+    description: "Owned the executive dashboard suite and A/B testing infrastructure. Reduced manual reporting by 85% through dbt + Looker automation.",
+    highlights: ["Dashboards", "A/B Testing", "Automation"],
+    side: "left",
+  },
+  {
+    period: "2020 — 2021",
+    role: "Junior Data Analyst",
+    company: "MetricsLab",
+    description: "First analytics hire. Built foundational SQL queries, established data governance practices, and created the company's first self-serve BI layer.",
+    highlights: ["SQL", "Data Governance", "BI"],
+    side: "right",
+  },
+  {
+    period: "2019 — 2020",
+    role: "Operations Intern → Analyst",
+    company: "SupplyChain Co.",
+    description: "Started as an intern, promoted to analyst after building a forecasting model that reduced stockouts by 30%. Fell in love with time-series analysis.",
+    highlights: ["Forecasting", "Time Series", "Promoted"],
+    side: "left",
+  },
+];
+---
+
+<section id="experience" class="py-24 md:py-32">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+    <div class="mb-16">
+      <span class="eyebrow text-ink/40 dark:text-dark-ink/40 mb-4 block reveal">Career Path</span>
+      <h2 class="display-lg max-w-[600px] text-ink dark:text-dark-ink reveal" style="transition-delay: 100ms">
+        Where I've
+        <span class="relative inline-block">
+          <span class="relative z-10">been</span>
+          <span class="absolute bottom-1 left-0 w-full h-3 bg-block-navy -z-0 rounded-sm"></span>
+        </span>
+      </h2>
+    </div>
+
+    <div class="relative">
+      <div class="timeline-line hidden md:block"></div>
+
+      <div class="space-y-12 md:space-y-16">
+        {experiences.map((exp, i) => (
+          <div
+            class={`reveal relative flex flex-col md:flex-row items-start gap-8 ${
+              exp.side === "left" ? "md:flex-row-reverse" : ""
+            }`}
+            style={`transition-delay: ${i * 100}ms`}
+          >
+            <div class="hidden md:block absolute left-1/2 top-6 -translate-x-1/2 z-10">
+              <div class="w-3 h-3 rounded-full bg-ink dark:bg-dark-ink border-4 border-canvas dark:border-dark-canvas"></div>
+            </div>
+
+            <div class={`md:w-1/2 ${exp.side === "left" ? "md:pl-12" : "md:pr-12"}`}>
+              <div class={`${exp.side === "left" ? "md:text-right" : ""}`}>
+                <span class="caption text-ink/30 dark:text-dark-ink/30 block mb-2">{exp.period}</span>
+                <h3 class="headline text-xl mb-1 text-ink dark:text-dark-ink">{exp.role}</h3>
+                <p class="text-ink/40 dark:text-dark-ink/40 text-sm font-mono tracking-wider uppercase mb-4">{exp.company}</p>
+                <p class="text-ink/60 dark:text-dark-ink/60 text-sm leading-relaxed mb-4">{exp.description}</p>
+                <div class={`flex flex-wrap gap-2 ${exp.side === "left" ? "md:justify-end" : ""}`}>
+                  {exp.highlights.map((h) => (
+                    <span class="px-2.5 py-1 bg-surface-soft dark:bg-dark-surface rounded-sm text-xs font-mono text-ink/50 dark:text-dark-ink/50 tracking-wider uppercase border border-hairline dark:border-dark-hairline">
+                      {h}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div class="hidden md:block md:w-1/2"></div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

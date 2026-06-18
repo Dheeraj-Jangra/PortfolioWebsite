@@ -1,0 +1,71 @@
+---
+const dsaTopics = [
+  { name: "Arrays & Hashing", solved: 85, icon: "⊞" },
+  { name: "Two Pointers", solved: 42, icon: " ⇄ " },
+  { name: "Sliding Window", solved: 38, icon: " ▤ " },
+  { name: "Binary Search", solved: 35, icon: " ⬍ " },
+  { name: "Trees & BST", solved: 60, icon: " ⎇ " },
+  { name: "Graphs (BFS/DFS)", solved: 55, icon: " ⌬ " },
+  { name: "Dynamic Programming", solved: 70, icon: " ∑ " },
+  { name: "Greedy", solved: 45, icon: " ★ " },
+];
+
+const contests = [
+  { name: "LeetCode Weekly", rank: "Top 8%", rating: "1842" },
+  { name: "LeetCode Biweekly", rank: "Top 5%", rating: "1920" },
+  { name: "Codeforces", rank: "Specialist", rating: "1450" },
+];
+---
+
+<section id="dsa" class="py-24 md:py-32">
+  <div class="max-w-[1280px] mx-auto px-6 md:px-8">
+    <div class="mb-16">
+      <span class="eyebrow text-ink/40 dark:text-dark-ink/40 mb-4 block reveal">Problem Solving</span>
+      <h2 class="display-lg max-w-[700px] text-ink dark:text-dark-ink reveal" style="transition-delay: 100ms">
+        DSA
+        <span class="relative inline-block">
+          <span class="relative z-10">playground</span>
+          <span class="absolute bottom-1 left-0 w-full h-3 bg-block-mint -z-0 rounded-sm"></span>
+        </span>
+      </h2>
+      <p class="body-lg text-ink/50 dark:text-dark-ink/50 max-w-[500px] mt-4 reveal" style="transition-delay: 200ms">
+        500+ problems solved. Not just for interviews — sharpening how I think about data pipelines, query optimization, and algorithmic complexity.
+      </p>
+    </div>
+
+    <!-- Topic Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 stagger-children">
+      {dsaTopics.map((topic) => (
+        <div class="reveal group p-5 rounded-lg border border-hairline dark:border-dark-hairline bg-surface-soft dark:bg-dark-surface hover:border-ink/20 dark:hover:border-dark-ink/20 transition-all duration-300">
+          <span class="text-2xl mb-3 block opacity-40">{topic.icon}</span>
+          <h4 class="text-sm font-medium text-ink dark:text-dark-ink mb-2 leading-tight">{topic.name}</h4>
+          <div class="flex items-center gap-2">
+            <div class="flex-1 h-1.5 bg-hairline dark:bg-dark-hairline rounded-full overflow-hidden">
+              <div
+                class="h-full bg-block-lime dark:bg-block-lime/60 rounded-full transition-all duration-1000"
+                style={`width: ${topic.solved}%`}
+              ></div>
+            </div>
+            <span class="caption text-ink/40 dark:text-dark-ink/40">{topic.solved}%</span>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Contest Performance -->
+    <div class="color-block-cream grain relative rounded-lg p-8 md:p-12">
+      <span class="eyebrow text-ink/40 dark:text-dark-ink/40 mb-6 block reveal">Contest Performance</span>
+      <div class="grid md:grid-cols-3 gap-6 stagger-children">
+        {contests.map((contest) => (
+          <div class="reveal">
+            <h4 class="headline text-lg text-ink dark:text-dark-ink mb-1">{contest.name}</h4>
+            <div class="flex items-baseline gap-3">
+              <span class="display-lg text-ink dark:text-dark-ink">{contest.rank}</span>
+              <span class="caption text-ink/40 dark:text-dark-ink/40">Rating: {contest.rating}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
